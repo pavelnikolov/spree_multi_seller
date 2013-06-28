@@ -1,0 +1,9 @@
+---
+#Bussiness Types
+-
+  business_type: "Electronic"
+  description: "This is Electronic Shop"
+-
+  business_type: "Test"
+  description: "Test"
+...

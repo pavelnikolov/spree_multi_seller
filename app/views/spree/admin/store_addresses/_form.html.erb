@@ -1,0 +1,63 @@
+<%#= render :partial => 'spree/admin/shared/seller_sub_menu' %>
+
+    <div data-hook="new_seller_attrs" class="row">
+      <div class="alpha four columns">
+        <%= f.field_container :address do %>
+          <%= f.label :address, "Address" %><span class="required">*</span><br />
+          <%= f.text_area :address, :size => "50*40", :class => 'fullwidth', :required => true %>
+          <%= f.error_message_on :address %>
+        <% end %>
+      </div>
+      <div class="four columns">
+        <%= f.field_container :city do %>
+          <%= f.label :city, "City" %> <span class="required">*</span><br />
+          <%= f.text_field :city, :class => 'fullwidth', :value => "Singapore",:readonly => true%>
+          <%= f.error_message_on :city %>
+        <% end %>
+      </div>
+      <div class="omega four columns">
+        <%= f.field_container :state do %>
+          <%= f.label :state, "State"%>
+          <%= f.error_message_on :state %>
+          <%= f.text_field :state, :class => 'fullwidth', :value => "Singapore",:readonly => true%>
+        <% end %>
+      </div>
+      <div class="four columns">
+        <div class="field <%= "billing-row" %>">
+          <%= f.label :country_id, Spree.t(:country) %><span class="required">*</span></br>
+          <span id="scountry">
+            <%= f.collection_select :country_id, available_countries, :id, :name, {:selected => 160}, {:class => 'select2 fullwidth'} %>
+          </span>
+        </div>
+      </div>
+    </div>
+    <div data-hook="new_seller_attrs_1" class="row">
+      <div class="omega four columns">
+        <%= f.field_container :zipcode do %>
+          <%= f.label :zipcode, "Zipcode"%><span class="required">*</span></br>
+          <%= f.error_message_on :zipcode%>
+          <%= f.text_field :zipcode, :class => 'fullwidth', :required => true %>
+        <% end %>
+      </div>
+      <div class="alpha four columns">
+        <%= f.field_container :contact do %>
+          <%= f.label :contact, "Contact Number" %><span class="required">*</span><br />
+          <%= f.text_field :contact, :size => 16, :class => 'fullwidth phone', :required => true %>
+          <%= f.error_message_on :contact %>
+        <% end %>
+      </div>
+      <div class="alpha four columns">
+        <%= f.field_container :email do %>
+          <%= f.label :email, "Email" %><span class="required">*</span><br />
+          <%= f.email_field :email, :size => 16, :class => 'fullwidth', :required => true %>
+          <%= f.error_message_on :email %>
+        <% end %>
+      </div>
+      <div class="alpha four columns">
+        <%= f.field_container :web_url do %>
+          <%= f.label :web_url, "Web Url" %><br />
+          <%= f.url_field :web_url, :size => 16, :class => 'fullwidth' %>
+          <%= f.error_message_on :web_url %>
+        <% end %>
+      </div>
+    </div>

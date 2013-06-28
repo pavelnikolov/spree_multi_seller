@@ -1,0 +1,37 @@
+<div class="new-seller">
+	<%= button_link_to 'New Seller', new_admin_seller_path, :class => "button", :icon => 'icon-plus' %>
+</div>
+<div style="padding-top: 50px;">
+	<table>
+		<thead>
+			<tr>
+				<th>#</th>
+				<th>Name</th>
+				<th>Person Name</th>
+				<th>Email</th>
+				<th>Contact</th>
+				<th>Roc Number</th>
+				<th>Address</th>
+				<th colspan=3></th>
+				
+			</tr>
+		</thead>
+		<tbody>
+			<% @sellers.each_with_index do |seller, index| %>
+				<tr>
+					<td><%= index + 1 %></td>
+					<td><%= link_to seller.name, edit_admin_seller_path(seller) %></td>
+					<td><%= seller.contact_person_name%></td>
+					<td><%= seller.contact_person_email%></td>
+					<td><%= seller.phone%></td>
+					<td><%= seller.roc_number%></td>
+					<td><%= raw seller.address%></td>
+					<td><%= link_to_edit seller, :no_text => true, :class => 'edit'%></td>
+					<td><%= link_to_delete seller, :no_text => true%></td>
+					<td><%= button_link_to "Add User", new_admin_user_path(:seller_id => seller.id), :icon => 'icon-plus' %></td>
+					
+				</tr>
+			<% end%>
+		</tbody>
+	</table>
+</div>

@@ -1,0 +1,12 @@
+<%= render :partial => 'spree/shared/error_messages', :locals => { :target => @seller } %>
+<%= form_for [:admin, @seller, @store_address] do |f| %>
+  <fieldset data-hook="new_seller">
+    <legend align="center">Store Address</legend>
+      <%= render :partial => "form", :locals => {:f => f} %>
+      <div class="form-buttons filter-actions actions" data-hook="buttons">
+        <%= button "Save & Continue", 'icon-ok' %>
+        <span class="or"><%= Spree.t(:or) %></span>
+        <%= link_to_with_icon 'icon-remove', Spree.t('actions.cancel'), admin_sellers_path, :class => 'button' %>
+      </div>
+  </fieldset>
+<%end%>

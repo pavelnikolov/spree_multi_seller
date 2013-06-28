@@ -1,0 +1,10 @@
+<div data-hook="new_seller_attrs" class="row">
+	<% Spree::Taxonomy.all.each do |taxonomy| %>  
+  <%= taxonomy.name %>  
+  <%= check_box_tag :taxonomy_id,  
+                    taxonomy.id,  
+                    @seller.taxonomies.include?(taxonomy),  
+                    :name => 'seller_category[taxonomy_id][]' %>  
+    
+<% end %>
+</div>

@@ -1,0 +1,12 @@
+
+<% if spree_current_user.has_role? 'admin'%>
+	<%= f.field_container :seller_id do %>
+		<%= f.label :seller_id, "Seller" %>
+		<%= f.collection_select(:seller_id, Spree::Seller.is_active, :id, :name, { :include_blank => 'None' }, { :class => 'select2' }) %>
+		<%= f.error_message_on :seller_id %>
+	<% end %>
+<%else%>
+	<%= f.hidden_field :seller_id, :value => spree_current_user.seller.id %>
+<%end%>
+<%= f.hidden_field :created_by, :value => spree_current_user.id%>
+<%= f.hidden_field :updated_by, :value => spree_current_user.id%>

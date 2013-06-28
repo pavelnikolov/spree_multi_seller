@@ -1,0 +1,36 @@
+<div data-hook="new_seller_attrs" class="row">
+	<div class="alpha four columns">
+    <%= f.field_container :name do %>
+      <%= f.label :name, "Bank Name" %><span class="required">*</span><br />
+      <%= f.text_field :name, :size => 16, :class => 'fullwidth', :required => true %>
+      <%= f.error_message_on :name %>
+    <% end %>
+  </div>
+  <div class="four columns">
+    <%= f.field_container :branch do %>
+      <%= f.label :branch, "Branch" %><br />
+      <%= f.text_field :branch, :size => 16, :class => 'fullwidth', :required => true %>
+    <% end %>
+  </div>
+  <div class="four columns">
+    <%= f.field_container :account_number do %>
+      <%= f.label :account_number, "Account Number" %> <span class="required">*</span><br />
+      <%= f.text_field :account_number, :class => 'fullwidth', :required => true %>
+      <%= f.error_message_on :account_number %>
+    <% end %>
+  </div>
+  <div class="four columns">
+    <%= f.field_container :ifsc_code do %>
+      <%= f.label :ifsc_code, "IFSC Code" %> <span class="required">*</span><br />
+      <%= f.text_field :ifsc_code, :class => 'fullwidth', :required => true %>
+      <%= f.error_message_on :ifsc_code %>
+    <% end %>
+  </div>
+  <div class="four columns">
+    <%= f.field_container :address do %>
+      <%= f.label :address, "address" %> <span class="required">*</span><br />
+      <%= f.text_area :address, :class => 'fullwidth', :size => "50*40", :required => true %>
+      <%= f.error_message_on :address %>
+    <% end %>
+  </div>
+</div>
