@@ -2,7 +2,10 @@ SpreeMultiSeller
 ================
 
 Introduction goes here.
-
+	This extension is used to add multiple seller in spree project with seperate admin, and compatible with
+	'spree_core', '~> 2.0.0'
+	'ruby', '>= 1.9.3'
+	'rails', '>=3.2.x'
 Installation
 ------------
 
@@ -37,4 +40,4 @@ Simply add this require statement to your spec_helper:
 require 'spree_multi_seller/factories'
 ```
 
-Copyright (c) 2013 [name of extension creator], released under the New BSD License
+Copyright (c) 2013 [Vishal Zambre], released under the New BSD License
